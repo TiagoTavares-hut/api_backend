@@ -3,6 +3,7 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from 'typeor
 
 @Entity({ name: 'products' }) // Mapeia para uma tabela chamada 'products'
 export class ProductEntity {
+  [x: string]: any;
   @PrimaryGeneratedColumn() // Define como chave primária com auto-incremento
   id: number;
 
