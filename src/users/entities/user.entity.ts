@@ -1,8 +1,8 @@
 // src/users/entities/user.entity.ts
 
-import { ProductEntity } from '../../products/entities/products.entity';
 import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Role } from '../../common/enum/role.enum'; // 1. Importar o Enum
+import { TaskEntity } from 'src/tasks/entities/tasks.entity';
 
 @Entity({ name: 'users' })
 export class UserEntity {
@@ -23,6 +23,6 @@ export class UserEntity {
   })
   role: Role;
 
-  @OneToMany(() => ProductEntity, (product) => product.user)
-  products: ProductEntity[];
+  @OneToMany(() => TaskEntity, (task) => task.user)
+  tasks: TaskEntity[];
 }
